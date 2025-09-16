@@ -29,19 +29,25 @@ Technologies Used:
 Setup Instructions:
 
 1. Clone the repository
+   
 git clone https://github.com/YOUR_USERNAME/lead-scoring-backend.git
+
 cd lead-scoring-backend
 
 2. Create and activate a virtual environment
+
 python -m venv .venv
+
 .\.venv\Scripts\activate  # For Windows
-# OR
+
 source .venv/bin/activate  # For macOS/Linux
 
 3. Install dependencies
+
 pip install -r requirements.txt
 
 4. Run the application locally
+
 uvicorn app.main:app --reload
 
 
@@ -111,6 +117,7 @@ Endpoint: GET /results/csv
 cURL Example:
 
 curl -X GET "http://127.0.0.1:8000/results/csv"
+
 
 
 
