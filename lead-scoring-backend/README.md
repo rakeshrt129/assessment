@@ -14,20 +14,8 @@ Features:
 
 Project Structure:
 
-lead-scoring-backend/
-│
-├── app/
-│   ├── main.py            # FastAPI app initialization
-│   ├── routes.py          # API endpoints: /offer, /leads/upload, /score, /results
-│   ├── scoring.py         # Rule logic for lead scoring and intent classification
-│   ├── storage.py         # In-memory data storage
-│   ├── utils.py           # CSV export helper functions
-│   └── models.py          # Pydantic models for request validation
-│
-├── requirements.txt       # Python dependencies
-├── Procfile               # Deployment configuration (Heroku/Render)
-├── README.md              # This documentation file
-└── leads.csv              # Sample leads data file for testing
+<img width="678" height="353" alt="image" src="https://github.com/user-attachments/assets/2860ac02-866d-405f-81b9-0e027f181a80" />
+
 
 Technologies Used:
 
@@ -123,5 +111,6 @@ Endpoint: GET /results/csv
 cURL Example:
 
 curl -X GET "http://127.0.0.1:8000/results/csv"
+
 
 
