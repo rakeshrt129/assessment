@@ -30,31 +30,31 @@ Setup Instructions:
 
 1. Clone the repository
    
-git clone https://github.com/YOUR_USERNAME/lead-scoring-backend.git
+    git clone https://github.com/YOUR_USERNAME/lead-scoring-backend.git
 
-cd lead-scoring-backend
+    cd lead-scoring-backend
 
 2. Create and activate a virtual environment
 
-python -m venv .venv
+     python -m venv .venv
 
-.\.venv\Scripts\activate  # For Windows
+     .\.venv\Scripts\activate  # For Windows
 
-source .venv/bin/activate  # For macOS/Linux
+     source .venv/bin/activate  # For macOS/Linux
 
 3. Install dependencies
 
-pip install -r requirements.txt
+      pip install -r requirements.txt
 
 4. Run the application locally
 
-uvicorn app.main:app --reload
+      uvicorn app.main:app --reload
 
 
-Visit: http://127.0.0.1:8000/
-You’ll see: {"message": "Lead Scoring Backend is running. Go to /docs to test API"}
+      Visit: http://127.0.0.1:8000/
+      You’ll see: {"message": "Lead Scoring Backend is running. Go to /docs to    test API"}
 
-Go to: http://127.0.0.1:8000/docs → Explore and test the API endpoints.
+      Go to: http://127.0.0.1:8000/docs → Explore and test the API endpoints.
 
 
 Sample CSV (leads.csv):
@@ -119,5 +119,50 @@ cURL Example:
 curl -X GET "http://127.0.0.1:8000/results/csv"
 
 
+Scoring Logic Explained:
+  1. Role Scoring
+
+     Decision-maker roles like CEO, Founder → 20 points
+
+     Influencer roles like Manager, Lead → 10 points
+
+     Others → 0 points
+
+  2. Industry Scoring
+
+     Exact or contained match with ideal use cases → 20 points
+
+     Partial overlap → 10 points
+
+  3. Completeness Score
+
+     If all fields (name, role, company, industry, location, bio) are filled → 10 points
+
+     Else → 0 points
+
+  4. Intent Mapping
+
+     High intent → 50 points
+
+     Medium intent → 30 points
+
+     Low intent → 10 points
+
+  5. Final Score
+
+     Summed across role, industry, completeness, and intent mapping — capped at 100.
+
+Why This Approach?
+
+ 1. Easy to understand and extend
+ 2. Fast processing without external API calls
+ 3. Transparent scoring logic
+ 4. Ideal for prototypes or internal tools
+ 5. Ready for integration with AI services in the future
+
+Live API :
+
+After deployment, your live API URL will look something like this:
+    https://yourappname.onrender.com
 
 
